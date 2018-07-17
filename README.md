@@ -19,9 +19,9 @@ BACKGROUND:::
 # to create melody
 0) cd magenta/
 1) ./bazel-bin/magenta/models/melody_rnn/melody_rnn_create_dataset --config=attention_rnn --input=/home/spencer_l_churchill/ee/notesequences.tfrecord --output_dir=/home/spencer_l_churchill/ee/out/ --eval_ratio=0.10
-2) ./bazel-bin/magenta/models/melody_rnn/melody_rnn_train --config=attention_rnn --run_dir=/home/spencer_l_churchill/ee/rundir/ --sequence_example_file=/home/spencer_l_churchill/ee/out/training_melodies.tfrecord --hparams="batch_size=64,rnn_layer_sizes=[64,64]"
+2) ./bazel-bin/magenta/models/melody_rnn/melody_rnn_train --config=attention_rnn --run_dir=/home/spencer_l_churchill/ee/rundir/ --sequence_example_file=/home/spencer_l_churchill/ee/out/training_melodies.tfrecord --hparams="batch_size=64,rnn_layer_sizes=[13,64,64,13]"
 3) tensorboard --port 6969 --logdir=/home/spencer_l_churchill/ee/rundir/
-4) ./bazel-bin/magenta/models/melody_rnn/melody_rnn_generate --config=attention_rnn --run_dir=/home/spencer_l_churchill/ee/rundir/ --output_dir=/home/spencer_l_churchill/ee/generated/ --num_outputs=10 --num_steps=480 --hparams="batch_size=64,rnn_layer_sizes=[64,64]" --primer_melody="[]"
+4) ./bazel-bin/magenta/models/melody_rnn/melody_rnn_generate --config=attention_rnn --run_dir=/home/spencer_l_churchill/ee/rundir/ --output_dir=/home/spencer_l_churchill/ee/generated/ --num_outputs=10 --num_steps=480 --hparams="batch_size=64,rnn_layer_sizes=[13,64,64,13]" --primer_melody="[]"
 
 -------------
 
