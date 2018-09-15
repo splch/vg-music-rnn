@@ -28,6 +28,6 @@ BACKGROUND:::
 # to create polyphony
 0) cd magenta/
 1) ./bazel-bin/magenta/models/polyphony_rnn/polyphony_rnn_create_dataset --input=/home/spencer_l_churchill/ee/res/notesequences.tfrecord --output_dir=/home/spencer_l_churchill/ee/res/out/ --eval_ratio=0.10
-2) ./bazel-bin/magenta/models/polyphony_rnn/polyphony_rnn_train --run_dir=/home/spencer_l_churchill/ee/res/rundir/ --sequence_example_file=/home/spencer_l_churchill/ee/res/out/training_poly_tracks.tfrecord --hparams="batch_size=64,rnn_layer_sizes=[13,64,64,13]"
+2) ./bazel-bin/magenta/models/polyphony_rnn/polyphony_rnn_train --run_dir=/home/spencer_l_churchill/ee/res/rundir/ --sequence_example_file=/home/spencer_l_churchill/ee/res/out/training_poly_tracks.tfrecord --hparams="batch_size=64,rnn_layer_sizes=[24,13,13,24]"
 3) tensorboard --port 6969 --logdir=/home/spencer_l_churchill/ee/res/rundir/
-4) ./bazel-bin/magenta/models/polyphony_rnn/polyphony_rnn_generate --run_dir=/home/spencer_l_churchill/ee/res/rundir/ --output_dir=/home/spencer_l_churchill/ee/res/generated/ --num_outputs=10 --num_steps=128 --hparams="batch_size=64,rnn_layer_sizes=[13.64,64,13]" --primer_melody="[]"
+4) ./bazel-bin/magenta/models/polyphony_rnn/polyphony_rnn_generate --run_dir=/home/spencer_l_churchill/ee/res/rundir/ --output_dir=/home/spencer_l_churchill/ee/res/generated/ --num_outputs=10 --num_steps=128 --hparams="batch_size=64,rnn_layer_sizes=[24,13,13,24]" --primer_melody="[]"
